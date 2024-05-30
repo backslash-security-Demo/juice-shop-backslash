@@ -17,4 +17,4 @@ jobs:
         with:
           authToken: ${{ secrets.AUTH_TOKEN }}
           ignoreBlocking: false
-          avoidComparingDifferences: false
+          avoidComparingDifferences: true
