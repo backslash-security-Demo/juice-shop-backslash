@@ -13,8 +13,7 @@ jobs:
     steps:
       - name: Backslash scan step
         id: bscan
-        uses: backslash-security/scan-action@main
+        uses: backslash-security/scan-action@before
         with:
-          authToken: ${{ secrets.AUTH_TOKEN }}
-          ignoreBlock: false
-          prScan: true
+          authToken: ${{ secrets.AUTH_TOKEN }} 
+          githubToken: ${{ secrets.PAT }}
