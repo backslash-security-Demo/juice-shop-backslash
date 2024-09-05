@@ -16,6 +16,6 @@ jobs:
         uses: backslash-security/scan-action@before
         with:
           authToken: ${{ secrets.AUTH_TOKEN }} 
-          githubToken: ${{ secrets.PAT }}
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
           ignoreBlock: false
           prScan: true
