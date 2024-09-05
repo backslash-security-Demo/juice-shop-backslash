@@ -17,3 +17,5 @@ jobs:
         with:
           authToken: ${{ secrets.AUTH_TOKEN }} 
           githubToken: ${{ secrets.PAT }}
+          ignoreBlock: false
+          prScan: true
