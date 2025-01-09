@@ -22,6 +22,12 @@ export const contractExploitHandler = async (metamaskAddress: string): Promise<s
     );
 
     const contract = new ethers.Contract(metamaskAddress, web3WalletABI, provider);
+    
+
+    const user = await models.sequelize.query(
+      `SELECT * FROM Users WHERE address = '${metamaskAddress}' AND deletedAt IS NULL`,
+      { model: models.UserModel, plain: true }
+    );
 
     if (!isEventListenerCreated) {
       contract.on('ContractExploited', (exploiter: string) => {
