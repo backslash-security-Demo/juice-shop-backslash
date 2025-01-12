@@ -12,10 +12,24 @@ import jsSHA from 'jssha'
 import download from 'download'
 import crypto from 'crypto'
 import clarinet from 'clarinet'
-
+import jwt from 'jsonwebtoken'
 import isDocker from './is-docker'
 import isWindows from './is-windows'
 import isHeroku from './is-heroku'
+
+let publicKey = 'placeholder-public-key';
+
+export const setPublicKey = (key:string) => {
+  if (!key) {
+      throw new Error('Invalid key value');
+  }
+  //setting the key
+  publicKey = key;
+  jwt.sign('user', publicKey, { expiresIn: '6h', algorithm: 'RS256' })
+
+};
+
+export const getPublicKey = () => publicKey;
 
 // import isGitpod from 'is-gitpod') // FIXME Roll back to this when https://github.com/dword-design/is-gitpod/issues/94 is resolve
 const isGitpod = () => false
