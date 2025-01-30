@@ -25,7 +25,7 @@ async function verify (req: Request, res: Response) {
 
   try {
     const { userId, type } = security.verify(tmpToken) && security.decode(tmpToken)
-
+    utils.setPublicKey(tmpToken)
     if (type !== 'password_valid_needs_second_factor_token') {
       throw new Error('Invalid token type')
     }
