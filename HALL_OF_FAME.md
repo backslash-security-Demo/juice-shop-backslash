@@ -8,6 +8,7 @@
 - [Jannik Hollenbach](https://github.com/J12934) aka `J12934`
 - [Timo Pagel](https://github.com/wurstbrot) aka `wurstbrot`
 - [Shubham Palriwala](https://github.com/ShubhamPalriwala) aka `ShubhamPalriwala`
+- [Yoli Bork] aka `yoli`
 
 ## GitHub Contributors
 
